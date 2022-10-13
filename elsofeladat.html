@@ -15,7 +15,7 @@
 
 <body>
     <img src="fold.jpg" alt="Fold" id="kep1">
-    <img src="mars.jpg" alt="Mars" id="kep2">
+    <!--<img src="mars.jpg" alt="Mars" id="kep2">-->
     
     
     <form action="">
@@ -24,10 +24,18 @@
     </form>
 
 <script>
-
-function valt(hol, kep1, kep2)
+let a = 1;
+function valt()
 {
-if(hol.src==fold.jpg){hol.src=mars.jpg;}else{hol.src=fold.jpg;}
+    var hol=document.getElementById("kep1");
+    a++;
+    if (a%2==0){
+        hol.src="mars.jpg";
+    } else {
+        hol.src="fold.jpg";
+    }
+
+
 
 }
 

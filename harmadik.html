@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Számológép</title>
+</head>
+<style>
+    .container {
+        border: 1px solid blue;
+    }
+
+    </style>
+
+<body>
+    <div class="container">
+        <h1 class="d-flex justify-content-center">Egyszerű számológép</h1>
+        <div class="d-flex justify-content-center m-2">
+            <input id="a" type="number" placeholder="Add meg az egyik számot">
+        </div>
+
+        <div class="d-flex justify-content-center m-2">
+            <input id="b" type="number" placeholder="Add meg a másik számot" value="">
+        </div>
+
+        <div class="d-flex justify-content-center m-2">
+            <input class="input-group-text" id="eredmeny" type="number" value="" placeholder="Eredmény">
+        </div>
+
+
+    
+            
+        <div class="row d-flex justify-content-center">
+            <input class="btn btn-primary m-2" type="button" onclick="osszeadas()" value="+">
+            <input class="btn btn-primary m-2" type="button" onclick="kivonas()" value="-">
+            <input class="btn btn-primary m-2" type="button" onclick="szorzas()" value="*">
+            <input class="btn btn-primary m-2" type="button" onclick="osztas()" value="/">
+            
+        </div>
+
+
+        
+
+        <script>
+            function osszeadas() {
+                let a = +document.getElementById("a").value
+                let b = +document.getElementById("b").value
+                let osszead = a + b
+                document.getElementById("eredmeny").value = osszead;
+            }
+            function kivonas() {
+                let a = +document.getElementById("a").value
+                let b = +document.getElementById("b").value
+                let kivon = a - b
+                document.getElementById("eredmeny").value = kivon;
+            }
+            function osztas() {
+                let a = +document.getElementById("a").value
+                let b = +document.getElementById("b").value
+                let oszt = a / b
+                document.getElementById("eredmeny").value = oszt;
+            }
+            function szorzas() {
+                let a = +document.getElementById("a").value
+                let b = +document.getElementById("b").value
+                let szoroz = a * b
+                document.getElementById("eredmeny").value = szoroz;
+                
+            }
+        </script>
+    </div>
+</body>
+
+</html>

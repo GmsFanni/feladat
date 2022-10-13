@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <title>Számítás</title>
 </head>
 <style>
@@ -15,32 +16,54 @@
 </style>
 
 <body>
-    <div class="container justify-content-center mg-2">
+    <div class="container text-align-center mg-3">
         <h1>Egyszerű számológép</h1>
-        <input id="a" type="number" value="Add meg a téglalap hosszát" placeholder="Add meg az egyik számot"><br>
-        <input id="b" type="number" value="Add meg a téglalap szélességét" placeholder="Add meg a másik számot"><br>
-
-        <input type="text" onclick="szamol()"><br>
-        <input type="button" class="bg-light" onclick="szamol()" value="Számol"><br>
+        <input id="a" type="number" value="Add meg az egyik számot" placeholder="Add meg az egyik számot"><br>
+        <input id="b" type="number" value="Add meg a másik számot" placeholder="Add meg a másik számot"><br>        
         
         <div id="T"></div>
         <div id="K"></div>
+
+        <div class="eredTerulet">
+            <p>Területe:</p>
+            
+        </div>
+
+        <div class="eredKerulet">
+            <p>Kerülete:</p>
+        </div>
         
-    
+        <div id="gomb">
+        <input type="button" class="bg-light" onclick="szamol()" value="Számol"><br>
+            </div>
     </div>
 
         
 
     <script>
         function szamol() {
-            let a = document.getElementById("a").value
-            let b = document.getElementById("b").value
+            let a =+ document.getElementById("a").value
+            let b =+ document.getElementById("b").value
             
             let kerulet = 2*a+2*b
             let terulet = a*b
             
+
+            document.getElementById("eredKerulet").innerHTML =+ kerulet
+            document.getElementById("eredTerulet").innerHTML =+ terulet
+
+            /*
             document.getElementById("T").innerHTML= `A téglalap területe: ${terulet}`
             document.getElementById("K").innerHTML= `A téglalap kerülete: ${kerulet}`
+            */
+
+            if(a<=0 || b<=0){
+                alert("Nem írt be helyes megoldást!")
+                document.querySelector('a').value=""
+                document.querySelector('b').value=""
+                
+            }
+
         }
     </script>
     
